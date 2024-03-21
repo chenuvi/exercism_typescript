@@ -1,0 +1,8 @@
+{
+  "extends": "@tsconfig/node18/tsconfig.json",
+  "compilerOptions": {
+    "module": "ES2022"
+  },
+  "include": ["src", "exercises"],
+  "exclude": ["test", "node_modules"]
+}
