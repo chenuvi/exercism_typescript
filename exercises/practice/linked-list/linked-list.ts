@@ -45,8 +45,18 @@ export class LinkedList<TElement> {
     return toBeReturned;
   }
 
-  public shift(): unknown {
-    throw new Error("Remove this statement and implement this function");
+  public shift() {
+    if (!this.first) {
+      return null;
+    }
+    const toBeReturned = this.first.value;
+    this.first = this.first.tail;
+    if (this.first) {
+      this.first.head = null;
+    } else {
+      this.last = null;
+    }
+    return toBeReturned;
   }
 
   public unshift(element: unknown) {
