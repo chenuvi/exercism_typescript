@@ -4,6 +4,7 @@ type Node<T> = {
   tail: Node<T>;
 } | null;
 
+// TODO test 3,5 Failed
 export class LinkedList<TElement> {
   last: Node<TElement> = null;
   first: Node<TElement> = null;
@@ -45,6 +46,7 @@ export class LinkedList<TElement> {
     return toBeReturned;
   }
 
+  // TODO fix
   public shift() {
     if (!this.first) {
       return null;
@@ -59,15 +61,42 @@ export class LinkedList<TElement> {
     return toBeReturned;
   }
 
-  public unshift(element: unknown) {
-    throw new Error("Remove this statement and implement this function");
+  // TODO fix
+  public unshift(element: TElement) {
+    if (!this.first) {
+      this.initialItem(element);
+      return;
+    }
+    const el = { head: null, value: element, tail: null };
+    this.first.head = el;
+    this.first.tail = el;
   }
 
-  public delete(element: unknown) {
-    throw new Error("Remove this statement and implement this function");
+  public delete(element: TElement) {
+    let current = this.first;
+    while (current) {
+      if (current.value === element) {
+        break;
+      }
+      current = current.tail;
+    }
+    if (current === this.first) {
+      this.first = null;
+      this.last = null;
+      return;
+    }
+    if (current?.head) {
+      current.head.tail = current.tail;
+    }
   }
 
-  public count(): unknown {
-    throw new Error("Remove this statement and implement this function");
+  public count(): number {
+    let count = 0;
+    let current = this.first;
+    while (current) {
+      count++;
+      current = current.tail;
+    }
+    return count;
   }
 }
