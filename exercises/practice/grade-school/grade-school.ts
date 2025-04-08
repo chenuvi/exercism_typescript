@@ -1,6 +1,6 @@
 type Student = string;
 type Grade = number;
-// type StudentRooster = Record<string, Student[]>;
+type StudentRooster = Record<string, Student[]>;
 type StudentGrades = Map<Student, Grade>;
 
 export class GradeSchool {
@@ -11,7 +11,11 @@ export class GradeSchool {
   }
 
   roster() {
-    throw new Error("Remove this statement and implement this function");
+    const result: StudentRooster = {};
+    Array.from(this.students.entries()).forEach(([, grade]) => {
+      result[grade] = this.grade(grade);
+    });
+    return result;
   }
 
   add(student: Student, level: Grade) {
