@@ -1897,7 +1897,7 @@ __metadata:
     "@types/jest": ^29.5.2
     "@types/node": ~18.16.16
     babel-jest: ^29.5.0
-    core-js: ~3.30.2
+    core-js: ~3.37.1
     eslint: ^8.42.0
     jest: ^29.5.0
     prettier: ^2.8.8
@@ -3305,6 +3305,13 @@ __metadata:
   version: 3.30.2
   resolution: "core-js@npm:3.30.2"
   checksum: 73d47e2b9d9f502800973982d08e995bbf04832e20b04e04be31dd7607247158271315e9328788a2408190e291c7ffbefad141167b1e57dea9f983e1e723541e
+  languageName: node
+  linkType: hard
+
+"core-js@npm:~3.37.1":
+  version: 3.37.1
+  resolution: "core-js@npm:3.37.1"
+  checksum: 2d58a5c599f05c3e04abc8bc5e64b88eb17d914c0f552f670fb800afa74ec54b4fcc7f231ad6bd45badaf62c0fb0ce30e6fe89cedb6bb6d54e6f19115c3c17ff
   languageName: node
   linkType: hard
 
